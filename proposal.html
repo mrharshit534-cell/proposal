@@ -3,6 +3,11 @@
 <head>
     <title>The Big Question</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        #noBtn {
+            position: absolute;
+        }
+    </style>
 </head>
 <body>
 
@@ -17,9 +22,24 @@
     <h1>So here it is... 💍</h1>
     <h2>Will you be my girlfriend?</h2>
 
-    <a href="yes.html"><button>YES 💖</button></a>
-    <button onclick="alert('Are you sure? Try again 😉')">No 🙈</button>
+    <a href="yes.html">
+        <button>YES 💖</button>
+    </a>
+
+    <button id="noBtn">No 🙈</button>
 </div>
+
+<script>
+    const noBtn = document.getElementById("noBtn");
+
+    noBtn.addEventListener("mouseover", function () {
+        const x = Math.floor(Math.random() * window.innerWidth);
+        const y = Math.floor(Math.random() * window.innerHeight);
+
+        noBtn.style.left = x + "px";
+        noBtn.style.top = y + "px";
+    });
+</script>
 
 </body>
 </html>
